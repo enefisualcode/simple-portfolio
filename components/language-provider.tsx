@@ -7,7 +7,7 @@ type LanguageContextValue = { language: Language; setLanguage: (language: Langua
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("id");
+  const [language, setLanguageState] = useState<Language>("en");
   const setLanguage = (next: Language) => {
     setLanguageState(next);
     window.localStorage.setItem("portfolio-language", next);
