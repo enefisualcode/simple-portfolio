@@ -16,6 +16,7 @@
 @media(max-width:800px){.nav-actions{margin-left:auto;margin-right:12px}.nav-actions .nav-cta{display:none}}
 /* Color balance: yellow and blue lead the palette; pink remains an accent. */
 h1 em{padding:0 .02em;border-width:2px;box-shadow:5px 5px 0 var(--ink)}
+@media(max-width:800px){.rail-controls{margin-right:22px}}
 .portfolio{background:var(--paper)}
 .primary{background:var(--yellow)}
 .detail-contact{background:var(--yellow)}
