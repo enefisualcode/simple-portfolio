@@ -15,6 +15,7 @@
 .nav-actions{display:flex;align-items:center;gap:22px}.language-toggle{display:flex;align-items:center;gap:6px;font-size:.78rem;font-weight:900}.language-toggle button{border:0;background:transparent;padding:3px;cursor:pointer;font-weight:900}.language-toggle button.active{background:var(--blue);border:2px solid var(--ink);padding:2px 5px}.language-toggle span{opacity:.5}
 @media(max-width:800px){.nav-actions{margin-left:auto;margin-right:12px}.nav-actions .nav-cta{display:none}}
 /* Color balance: yellow and blue lead the palette; pink remains an accent. */
+h1 em{padding:0 .02em;border-width:2px;box-shadow:5px 5px 0 var(--ink)}
 .portfolio{background:var(--paper)}
 .primary{background:var(--yellow)}
 .detail-contact{background:var(--yellow)}
