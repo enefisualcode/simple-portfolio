@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import ProjectDetail from "../../../components/project-detail";
 
-const slugs = ["finance-bot", "work-report-bot", "kabisat"];
+const slugs = ["finance-bot", "work-report-bot", "kabisat", "geprek-ajo"];
 
 export function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
