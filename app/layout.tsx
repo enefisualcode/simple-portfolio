@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { LanguageProvider } from "../components/language-provider";
-import { VisitorCount } from "../components/visitor-count";
 
 export const metadata: Metadata = {
   title: {
@@ -28,5 +28,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="id"><body><LanguageProvider>{children}</LanguageProvider><VisitorCount /></body></html>;
+  return <html lang="id"><body><LanguageProvider>{children}</LanguageProvider><Analytics /></body></html>;
 }
