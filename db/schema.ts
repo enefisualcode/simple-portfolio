@@ -1,4 +1,7 @@
-// Intentionally empty by default.
-// Add Drizzle tables here when the site actually needs a database.
-// See examples/d1/db/schema.ts for an opt-in example.
-export {};
+import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+
+/** An anonymous browser identifier prevents repeat-refresh counting. */
+export const siteVisitors = sqliteTable("site_visitors", {
+  visitorId: text("visitor_id").primaryKey(),
+  firstSeenAt: text("first_seen_at").notNull(),
+});
