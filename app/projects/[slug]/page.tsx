@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectDetail from "../../../components/project-detail";
 
-const slugs = ["finance-bot", "work-report-bot", "kabisat", "geprek-ajo"];
+const slugs = ["finance-bot", "work-report-bot", "kabisat", "maulid-kabisat", "geprek-ajo"];
 
 const projectMetadata: Record<string, { title: string; description: string }> = {
   "finance-bot": { title: "Personal Finance Telegram Bot", description: "Telegram bot untuk mencatat pemasukan dan pengeluaran yang terhubung ke Google Sheets dan dashboard." },
   "work-report-bot": { title: "Work Activity & Sales Report Bot", description: "Bot Telegram untuk pencatatan aktivitas kerja, follow-up, dan laporan penjualan." },
   kabisat: { title: "KABISAT Alumni Website", description: "Website komunitas alumni dengan informasi organisasi, agenda, dan kegiatan." },
+  "maulid-kabisat": { title: "Undangan Maulid KABISAT", description: "Undangan digital peringatan Maulid Nabi Muhammad SAW oleh KABISAT Angkatan Tujuh." },
   "geprek-ajo": { title: "AJO Ayam Geprek Partnership Website", description: "Landing page kemitraan F&B dengan informasi paket usaha dan CTA WhatsApp." },
 };
 
