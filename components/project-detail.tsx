@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "./language-provider";
+import { ThemeToggle } from "./theme-toggle";
 
 type Localized = { id: string; en: string };
 type ProjectDocument = { label: Localized; href: string };
@@ -26,7 +27,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
   if (!p) return null;
   const text = (value: Localized) => value[language];
   const labels = language === "id" ? { back: "Kembali ke portfolio", live: "Buka live project", context: "Konteks", approach: "Pendekatan", problem: "Problem", solution: "Solution", input: "Dari input ke hasil", how: "Cara Kerja", workflow: "Gambaran workflow", system: "Alur Sistem", tools: "Tools / Integrasi", view: "Project view", gallery: "Galeri Screenshot", swipe: "Geser ke samping untuk melihat screenshot lainnya.", documentation: "Dokumentasi Project", similar: "Punya workflow serupa?", discuss: "Diskusikan project Anda" } : { back: "Back to portfolio", live: "Open live project", context: "The context", approach: "The approach", problem: "Problem", solution: "Solution", input: "From input to outcome", how: "How It Works", workflow: "Workflow overview", system: "System Flow", tools: "Tools / Integration", view: "Project view", gallery: "Screenshot Gallery", swipe: "Swipe sideways to see more screenshots.", documentation: "Project Documentation", similar: "Have a similar workflow?", discuss: "Discuss your project" };
-  return <main className="detail"><header className="detail-nav"><Link className="brand" href="/">Nabil<span>.</span></Link><Link href="/#portfolio" className="back">← {labels.back}</Link></header>
+  return <main className="detail"><header className="detail-nav"><Link className="brand" href="/">Nabil<span>.</span></Link><div className="detail-actions"><ThemeToggle /><Link href="/#portfolio" className="back">← {labels.back}</Link></div></header>
     <section className="detail-hero"><p className="eyebrow"><i /> {text(p.kind)}</p><h1>{p.title}</h1><p>{text(p.intro)}</p><a className="detail-live" href={p.live} target="_blank" rel="noreferrer">{labels.live} ↗</a></section>
     <section className="gallery"><div><p className="detail-label">{labels.view}</p><h2>{labels.gallery}</h2><p>{labels.swipe}</p></div>{p.desktopImages && p.mobileImages ? <><ScreenshotSlider title={language === "id" ? "Tampilan Desktop" : "Desktop Screenshots"} images={p.desktopImages} projectTitle={p.title} orientation="landscape" /><ScreenshotSlider title={language === "id" ? "Tampilan Mobile" : "Mobile Screenshots"} images={p.mobileImages} projectTitle={p.title} orientation="portrait" /></> : <div className={"gallery-grid gallery-slider " + p.orientation} aria-label={labels.gallery + " " + p.title}>{p.images.map((src, index) => <div className="screenshot-placeholder" key={src}><img src={src} alt={p.title + " screenshot " + (index + 1)} /><div><span>Screenshot {index + 1}</span><b>{p.orientation === "portrait" ? "9:16" : "16:9"}</b></div></div>)}</div>}</section>
     <section className="detail-body"><div><p className="detail-label">{labels.context}</p><h2>{labels.problem}</h2><p>{text(p.problem)}</p></div><div><p className="detail-label">{labels.approach}</p><h2>{labels.solution}</h2><p>{text(p.solution)}</p></div></section>
